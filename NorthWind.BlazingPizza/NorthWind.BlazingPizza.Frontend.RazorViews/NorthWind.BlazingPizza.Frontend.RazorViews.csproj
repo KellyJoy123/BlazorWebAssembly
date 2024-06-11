@@ -1,0 +1,57 @@
+<Project Sdk="Microsoft.NET.Sdk.Razor">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Shared\MainLayout.razor.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Shared\MainLayout.razor.css" />
+  </ItemGroup>
+
+
+  <ItemGroup>
+    <SupportedPlatform Include="browser" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.5" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="wwwroot\css\font\quicksand-v8-latin-300.woff2" />
+    <None Include="wwwroot\css\font\quicksand-v8-latin-500.woff2" />
+    <None Include="wwwroot\css\font\quicksand-v8-latin-700.woff2" />
+    <None Include="wwwroot\css\font\quicksand-v8-latin-regular.woff2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\NortWind.BlazingPizza.Frontend.ViewModels\NortWind.BlazingPizza.Frontend.ViewModels.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Resources\Messages.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Messages.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Resources\Messages.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Messages.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Components\Card\" />
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+</Project>

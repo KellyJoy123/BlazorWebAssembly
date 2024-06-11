@@ -1,0 +1,17 @@
+﻿<div class="main">
+    <ul class="pizza-cards">
+        @if (ViewModel.Specials != null)
+        {
+            foreach (var item in ViewModel.Specials)
+            {
+                <li style="background-image: url('@item.ImageUrl')">
+                    <div class="pizza-info">
+                        <span class="title">@item.Name</span>
+                        @item.Description
+                        <span class="price">@item.FormattedBasePrice</span>
+                    </div>
+                </li>
+            }
+        }
+    </ul>
+</div>

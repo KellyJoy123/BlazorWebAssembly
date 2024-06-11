@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+		<FrameworkReference Include="Microsoft.AspNetCore.App"></FrameworkReference>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\NorthWind.BlazingPizza.Backend.BusinessObjects\NorthWind.BlazingPizza.Backend.BusinessObjects.csproj" />
+	</ItemGroup>
+	
+</Project>
