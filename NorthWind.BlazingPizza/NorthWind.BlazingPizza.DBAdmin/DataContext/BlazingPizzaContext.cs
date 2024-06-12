@@ -21,5 +21,6 @@ namespace NorthWind.BlazingPizza.DBAdmin.DataContext
             base.OnModelCreating(modelBuilder);
         }
         public DbSet<PizzaSpecial> PizzaSpecials { get; set; }
+        public DbSet<Topping> Toppings { get; set; }
     }
 }

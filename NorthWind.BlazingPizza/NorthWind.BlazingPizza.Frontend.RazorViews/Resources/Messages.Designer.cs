@@ -61,11 +61,56 @@ namespace NorthWind.BlazingPizza.Frontend.RazorViews.Resources {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a Complementos adicionales.
+        /// </summary>
+        internal static string AdditionalToppingsLabel {
+            get {
+                return ResourceManager.GetString("AdditionalToppingsLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a Blazing Pizza.
         /// </summary>
         internal static string AppTitle {
             get {
                 return ResourceManager.GetString("AppTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cancelar.
+        /// </summary>
+        internal static string CancelButton {
+            get {
+                return ResourceManager.GetString("CancelButton", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Tamaño.
+        /// </summary>
+        internal static string CustomPizzaSizeLabel {
+            get {
+                return ResourceManager.GetString("CustomPizzaSizeLabel", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Máximo alcanzado.
+        /// </summary>
+        internal static string HasMaximumToppingsText {
+            get {
+                return ResourceManager.GetString("HasMaximumToppingsText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Cargando....
+        /// </summary>
+        internal static string LoadingText {
+            get {
+                return ResourceManager.GetString("LoadingText", resourceCulture);
             }
         }
         
@@ -84,6 +129,33 @@ namespace NorthWind.BlazingPizza.Frontend.RazorViews.Resources {
         internal static string NotFoundErrorMessage {
             get {
                 return ResourceManager.GetString("NotFoundErrorMessage", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Ordenar.
+        /// </summary>
+        internal static string OrderButtonText {
+            get {
+                return ResourceManager.GetString("OrderButtonText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Precio.
+        /// </summary>
+        internal static string PriceText {
+            get {
+                return ResourceManager.GetString("PriceText", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Busca una cadena traducida similar a Selecciona.
+        /// </summary>
+        internal static string SelectToppingOptionText {
+            get {
+                return ResourceManager.GetString("SelectToppingOptionText", resourceCulture);
             }
         }
     }

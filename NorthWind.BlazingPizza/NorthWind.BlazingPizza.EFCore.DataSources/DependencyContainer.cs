@@ -10,7 +10,7 @@ namespace NorthWind.BlazingPizza.EFCore.DataSources
         public static IServiceCollection AddDataSources(this IServiceCollection services, 
             Action<DBOptions> configureDBOptions) {
             services.AddScoped<IPizzaSpecialDataSource, PizzaSpecialDataSource>();
-            
+            services.AddScoped<IToppingDataSource, ToppingDataSource>();
             services.Configure(configureDBOptions);
             
             return services;
