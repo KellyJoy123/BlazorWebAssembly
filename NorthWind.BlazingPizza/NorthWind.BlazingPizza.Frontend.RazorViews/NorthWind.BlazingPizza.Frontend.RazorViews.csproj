@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Razor">
+﻿<Project Sdk="Microsoft.NET.Sdk.Razor">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -6,10 +6,10 @@
     <ImplicitUsings>enable</ImplicitUsings>
   </PropertyGroup>
 
-  <ItemGroup>
-    <None Remove="Shared\MainLayout.razor.css" />
-  </ItemGroup>
-
+	<ItemGroup>
+		<None Remove="Shared\MainLayout.razor.css" />
+	</ItemGroup>
+	
   <ItemGroup>
     <Content Include="Shared\MainLayout.razor.css" />
   </ItemGroup>
@@ -24,6 +24,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Include="Components\OrderedPizza.razor" />
     <None Include="wwwroot\css\font\quicksand-v8-latin-300.woff2" />
     <None Include="wwwroot\css\font\quicksand-v8-latin-500.woff2" />
     <None Include="wwwroot\css\font\quicksand-v8-latin-700.woff2" />

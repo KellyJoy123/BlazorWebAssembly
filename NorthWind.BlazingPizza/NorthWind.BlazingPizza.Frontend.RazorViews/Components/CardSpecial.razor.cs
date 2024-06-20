@@ -1,10 +1,16 @@
-﻿namespace NorthWind.BlazingPizza.Frontend.RazorViews.Components
+﻿using NorthWind.BlazingPizza.Entities.DTOs.GetSpecials;
+
+namespace NorthWind.BlazingPizza.Frontend.RazorViews.Components
 {
     public partial class CardSpecial
     {
-        [Inject] private GetSpecialViewModel ViewModel { get; set; }
+        [Inject]  
+        GetSpecialViewModel ViewModel { get; set; }
 
-        protected override async Task OnInitializedAsync()
+        [Parameter]
+        public EventCallback<PizzaSpecialDTO> OnClickSpecial { get; set; }
+
+         override protected async Task OnInitializedAsync()
         {
             await ViewModel.GetSpecialAsync();
         }

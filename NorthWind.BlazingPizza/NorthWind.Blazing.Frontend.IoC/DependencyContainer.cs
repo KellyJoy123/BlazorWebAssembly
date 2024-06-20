@@ -1,4 +1,5 @@
 ﻿using Microsoft.Extensions.Options;
+using NorthWind.Blazing.Frontend.BusinessObjects;
 using NorthWind.Blazing.Frontend.BusinessObjects.Options;
 
 namespace NorthWind.BlazingPizza.Frontend.IoC
@@ -25,7 +26,10 @@ namespace NorthWind.BlazingPizza.Frontend.IoC
 
             services.AddSingleton(Options.Create(BlazingPizzaOptions));
 
+            services.AddBusinessObjectsServices();
+
             return services;
         }
     }
 }
+

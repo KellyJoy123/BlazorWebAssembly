@@ -27,7 +27,7 @@ namespace NorthWind.Blazing.Frontend.BusinessObjects.Aggregates
             }
         }
 
-        public void RemuveTopping(ToppingDto topping) => 
+        public void RemoveTopping(ToppingDto topping) => 
             ToppingsField.Remove(topping);
 
 
@@ -41,7 +41,7 @@ namespace NorthWind.Blazing.Frontend.BusinessObjects.Aggregates
             GetBasePrice().ToString("$ 0.00");
 
         public string GetFormattedSizeWithTotalPrice() =>
-            $"{Size} cm ({GetFormattedTotalPrice})";
+            $"{Size} cm ({GetFormattedTotalPrice()})";
     }
 
 }

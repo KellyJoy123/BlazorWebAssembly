@@ -1,4 +1,5 @@
 ﻿using NortWind.BlazingPizza.Frontend.ViewModels.ConfigurePizzaDialog;
+using NortWind.BlazingPizza.Frontend.ViewModels.Index;
 
 namespace NortWind.BlazingPizza.Frontend.ViewModels
 {
@@ -9,6 +10,7 @@ namespace NortWind.BlazingPizza.Frontend.ViewModels
 
             services.AddScoped<GetSpecialViewModel>();
             services.AddScoped<ConfigurePizzaDialogViewModel>();
+            services.AddScoped<IndexViewModel>();
             return services;
         }
     }

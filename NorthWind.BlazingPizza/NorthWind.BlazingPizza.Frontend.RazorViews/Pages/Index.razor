@@ -1,4 +1,13 @@
 ﻿@page "/"
 
 <PageTitle>@Messages.AppTitle</PageTitle>
-<CardSpecial/>
+<CardSpecial OnClickSpecial="ViewModel.ConfigurePizza"/>
+<OrderedPizzas ShoppingCart="ShoppingCart"/>
+
+@if (ViewModel.ShowConfigureDialog)
+{
+    <ConfigurePizzaDialog CustomPizza="ViewModel.CustomPizza"
+    OnCancel="ViewModel.CancelConfigurePizza"
+    OnConfirm="ViewModel.ConfirmConfigurePizza"/>
+}
+

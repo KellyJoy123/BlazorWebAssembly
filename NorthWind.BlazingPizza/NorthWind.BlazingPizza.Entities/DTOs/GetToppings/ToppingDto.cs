@@ -14,6 +14,6 @@ namespace NorthWind.BlazingPizza.Entities.DTOs.GetToppings
 
         public string GetFormattedPrice() => price.ToString("0.00");
 
-        public string GetFormattedNameWithPrice() => $"{name} - ({GetFormattedPrice})";
+        public string GetFormattedNameWithPrice() => $"{name} - ({GetFormattedPrice()})";
     }
 }
