@@ -1,7 +1,6 @@
 using Microsoft.Extensions.Options;
 using NorthWind.Blazing.Frontend.BusinessObjects.Aggregates;
 using NorthWind.Blazing.Frontend.BusinessObjects.Options;
-using NortWind.BlazingPizza.Frontend.ViewModels.ConfigurePizzaDialog;
 
 namespace NorthWind.BlazingPizza.Frontend.RazorViews.Components
 {

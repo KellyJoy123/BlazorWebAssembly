@@ -1,8 +1,10 @@
 ﻿using Microsoft.Extensions.DependencyInjection;
 using NorthWind.BlazingPizza.Backend.BusinessObjects.Interfaces.GetSpecials;
 using NorthWind.BlazingPizza.Backend.BusinessObjects.Interfaces.GetToppings;
+using NorthWind.BlazingPizza.Backend.BusinessObjects.Interfaces.PlaceOrder;
 using NorthWind.BlazingPizza.Backend.UseCases.GetSpecials;
 using NorthWind.BlazingPizza.Backend.UseCases.GetToppings;
+using NorthWind.BlazingPizza.Backend.UseCases.PlaceOrder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -18,6 +20,8 @@ namespace NorthWind.BlazingPizza.Backend.UseCases
             services.AddScoped<IGetSpecialsInputPort, GetSpecialsInteractor>();
 
             services.AddScoped<IGetToppingsInputPort, GetToppingsInteractor>();
+
+            services.AddScoped<IPlaceOrderInputPort, PlaceOrderInteractor>();
             return services;
         }
     }

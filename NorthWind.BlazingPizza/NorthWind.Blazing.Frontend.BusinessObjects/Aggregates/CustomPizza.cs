@@ -1,5 +1,6 @@
 ﻿using NorthWind.Blazing.Frontend.BusinessObjects.Options;
 using NorthWind.BlazingPizza.Entities.DTOs.GetToppings;
+using NorthWind.BlazingPizza.Entities.DTOs.PlaceOrder;
 
 namespace NorthWind.Blazing.Frontend.BusinessObjects.Aggregates
 {
@@ -42,6 +43,16 @@ namespace NorthWind.Blazing.Frontend.BusinessObjects.Aggregates
 
         public string GetFormattedSizeWithTotalPrice() =>
             $"{Size} cm ({GetFormattedTotalPrice()})";
+
+        public static explicit operator PlaceOrderPizzaDto(
+            CustomPizza pizza) =>
+            new PlaceOrderPizzaDto(
+                pizza.Special.Id,
+                pizza.Size,
+                pizza.Toppings.Select(t => t.Id),
+                pizza.GetTotalPrice()
+                );
+
     }
 
 }

@@ -11,8 +11,8 @@ namespace NorthWind.BlazingPizza.Backend.IoC
             this WebApplication app) 
         {
 
-            app.UseGetSpecialsController();
-            app.UseGetToppingsController();
+            app.UseBlazingPizzaControllers();
+            
 
             return app;
         }

@@ -1,10 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using NorthWind.BlazingPizza.Backend.Repositories.Entities;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace NorthWind.BlazingPizza.DBAdmin.DataContext
 {
@@ -22,5 +18,7 @@ namespace NorthWind.BlazingPizza.DBAdmin.DataContext
         }
         public DbSet<PizzaSpecial> PizzaSpecials { get; set; }
         public DbSet<Topping> Toppings { get; set; }
+        public DbSet<CustomPizza> CustomPizzas { get; set; }
+        public DbSet<Order> Orders { get; set; }
     }
 }
