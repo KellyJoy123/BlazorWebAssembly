@@ -1,6 +1,7 @@
 ﻿using NorthWind.Blazing.Frontend.BusinessObjects.Interfaces.Checkout;
 using NorthWind.Blazing.Frontend.BusinessObjects.Interfaces.GetToppings;
 using NorthWind.BlazingPizza.Frontend.WebApiProxy.Checkout;
+using NorthWind.BlazingPizza.Frontend.WebApiProxy.Common;
 using NorthWind.BlazingPizza.Frontend.WebApiProxy.GetToppings;
 
 namespace NorthWind.BlazingPizza.Frontend.WebApiProxy
@@ -9,25 +10,28 @@ namespace NorthWind.BlazingPizza.Frontend.WebApiProxy
     {
         public static IServiceCollection AddModels(
             this IServiceCollection services,
-            Action<HttpClient> configureGetSpecialsModelHttpClient,
-            Action<IHttpClientBuilder> getSpecialsHttpClientBuilder,
-            Action<HttpClient> configureGetToppingsModelHttpClient,
-            Action<IHttpClientBuilder> getToppingsHttpClientBuilder)
+            HttpClientConfigurator getSpecialModelConfigurator,
+            HttpClientConfigurator getToppingsModelConfigurator,
+            HttpClientConfigurator checkoutModelConfigurator)
         {
-            IHttpClientBuilder Builder = services
-                .AddHttpClient < IGetSpecialModel, 
-                GetSpecialModel>(configureGetSpecialsModelHttpClient);
+            services
+                .AddHttpClient<IGetSpecialModel, GetSpecialModel>(getSpecialModelConfigurator)
+                .AddHttpClient<IGetToppingsModel, GetToppingsModel>(getToppingsModelConfigurator)
+                .AddHttpClient<ICheckoutModel, CheckoutModel>(checkoutModelConfigurator);
 
-            getSpecialsHttpClientBuilder?.Invoke(Builder);
 
+            return services;
+        }
+        static IServiceCollection AddHttpClient<TClient, TImplementation>(
+            this IServiceCollection services,
+            HttpClientConfigurator configurator)
+            where TClient : class where TImplementation : class, TClient
+        {
+            var Builder = services.AddHttpClient<TClient, TImplementation>(
+                configurator.ConfigureHttpClient);
 
-            IHttpClientBuilder GetToppingsBuilder = services
-                .AddHttpClient<IGetToppingsModel,
-                GetToppingsModel>(configureGetToppingsModelHttpClient);
+            configurator.ConfigureNamedHttpClient?.Invoke(Builder);
 
-            getToppingsHttpClientBuilder?.Invoke(GetToppingsBuilder);
-
-            services.AddScoped<ICheckoutModel, CheckoutModel>();
 
             return services;
         }

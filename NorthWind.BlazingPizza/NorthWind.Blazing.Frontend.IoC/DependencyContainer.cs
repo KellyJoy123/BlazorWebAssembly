@@ -1,6 +1,7 @@
 ﻿using Microsoft.Extensions.Options;
 using NorthWind.Blazing.Frontend.BusinessObjects;
 using NorthWind.Blazing.Frontend.BusinessObjects.Options;
+using NorthWind.BlazingPizza.Frontend.WebApiProxy.Common;
 
 namespace NorthWind.BlazingPizza.Frontend.IoC
 {
@@ -13,20 +14,26 @@ namespace NorthWind.BlazingPizza.Frontend.IoC
             BlazingPizzaOptions BlazingPizzaOptions = new();
             configureBlazingPizzaOptions(BlazingPizzaOptions);
 
-
-            Uri WebApiUri = new Uri(BlazingPizzaOptions.WebApiBaseAddress);
-            services.AddModels(
-                httpClient => httpClient.BaseAddress = WebApiUri,
-                null,
-                httpClient => httpClient.BaseAddress = WebApiUri,
-                null
-                );
+            services.AddModels(BlazingPizzaOptions);
 
             services.AddViewModels();
 
             services.AddSingleton(Options.Create(BlazingPizzaOptions));
 
             services.AddBusinessObjectsServices();
+
+            return services;
+        }
+
+        static IServiceCollection AddModels(this IServiceCollection services,
+            BlazingPizzaOptions options)
+        {
+            Uri WebApiUri = new Uri(options.WebApiBaseAddress);
+            var Configurator = new HttpClientConfigurator(
+                httpClient => httpClient.BaseAddress = WebApiUri,
+                null);
+
+            services.AddModels(Configurator, Configurator, Configurator);
 
             return services;
         }
