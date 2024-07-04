@@ -8,13 +8,14 @@ using System.Threading.Tasks;
 namespace NorthWind.BlazingPizza.Entities.DTOs.GetOrders
 {
     public class GetOrdersDto(
-        int id, DateTime createdTime,
+        int id, 
+        DateTime createTime,
         int pizzaCount,
         decimal totalPrice, 
         OrderStatus status)
     {
         public int Id => id;
-        public DateTime CreateTime => createdTime;
+        public DateTime CreateTime => createTime;
         public int PizzaCount => pizzaCount;
         public decimal TotalPrice => totalPrice;
         public OrderStatus Status => status;

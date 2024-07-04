@@ -2,10 +2,17 @@
     <a class="logo" href="">
         <img src="@ImagePath/logo.svg" />
     </a>
-    <a class="nav-tab active" href="">
+    <NavLink class="nav-tab" href="" Match="NavLinkMatch.All">
         <img src="@ImagePath/pizza-slice.svg" />
         <div>
             @Messages.ChoosePizzaLinkText
         </div>
-    </a>
+    </NavLink>
+
+    <NavLink class="nav-tab" href="orders">
+        <img src="@ImagePath/bike.svg" />
+        <div>
+            @Messages.MyOrderText
+        </div>
+    </NavLink>
 </div>

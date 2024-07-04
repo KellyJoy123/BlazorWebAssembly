@@ -6,7 +6,7 @@ namespace NorthWind.BlazingPizza.Entities.Extensions
 {
     public static class OrderStatusExtensions
     {
-        public static string ToDriendlyString(this OrderStatus status) =>
+        public static string ToFriendlyString(this OrderStatus status) =>
             status switch
             {
                 OrderStatus.Preparing => Messages.PrepparingText,

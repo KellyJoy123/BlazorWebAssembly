@@ -33,7 +33,12 @@ namespace NorthWind.BlazingPizza.Frontend.IoC
                 httpClient => httpClient.BaseAddress = WebApiUri,
                 null);
 
-            services.AddModels(Configurator, Configurator, Configurator);
+            services.AddModels(
+                Configurator, 
+                Configurator, 
+                Configurator, 
+                Configurator
+            );
 
             return services;
         }
